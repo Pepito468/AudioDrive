@@ -59,6 +59,7 @@ int main()
         fprintf(stderr, "Error allocating memory for the Server IP address. Exiting...\n");
         return 1;
     }
+    
     /* Now I have the IP address in [real_ip_address] */
     printf("%s\n", real_ip_address);
     free(real_ip_address);
