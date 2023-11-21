@@ -15,8 +15,8 @@ int main()
 
     FILE *server_info_read = NULL;
     char server_info_buffer[32];
-    char* static_ip_buffer; /* needed only for URL to IP*/
-    char* real_ip_address = (char*) malloc(sizeof(char)*16); /*12 digits + 3 dots + \0 */
+    char* static_ip_buffer = NULL; /* needed only for URL to IP*/
+    char* real_ip_address = NULL;
 
     /* Retreiving info from info file */
     server_info_read = fopen("server_info.txt", "r");
@@ -46,10 +46,12 @@ int main()
             return 1;
         } else {
         /* if I am here that means that the ip address returned is valid! */
+        real_ip_address = (char*) malloc(sizeof(char)*16); /*12 digits + 3 dots + \0  --> allocating memory for the ip address*/
         memcpy(real_ip_address, static_ip_buffer, sizeof(char)*16);
         }
     } else {
         /* If I am here that means the server_info.txt contains a valid IP address*/
+        real_ip_address = (char*) malloc(sizeof(char)*16); /*12 digits + 3 dots + \0  --> allocating memory for the ip address*/
         memcpy(real_ip_address, server_info_buffer, sizeof(char)*16);
     }
 
