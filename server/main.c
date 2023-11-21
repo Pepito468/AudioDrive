@@ -53,6 +53,11 @@ int main()
         memcpy(real_ip_address, server_info_buffer, sizeof(char)*16);
     }
 
+    if (!real_ip_address){
+        fprintf(stderr, "Error allocating memory for the Server IP address. Exiting...\n");
+        return 1;
+    }
+    /* Now I have the IP address in [real_ip_address] */
     printf("%s\n", real_ip_address);
     free(real_ip_address);
     return 0;
