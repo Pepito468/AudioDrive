@@ -1,4 +1,4 @@
-### Every file in this folder is under GPLv3 Licence as states in the entire repository at https://github.com/Pepito468/AudioDrive
+### Every file in this folder is under GPLv3 Licence as the folder itself belongs to the repository at https://github.com/Pepito468/AudioDrive
 # Instructions
 
 Put the IP address (or a url) of your server into server_info.txt.

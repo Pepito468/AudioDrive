@@ -1,3 +1,4 @@
+/* This file is under GPLv3 Licence as stated in the repository at https://github.com/Pepito468/AudioDrive */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -59,7 +60,7 @@ int main()
         fprintf(stderr, "Error allocating memory for the Server IP address. Exiting...\n");
         return 1;
     }
-    
+
     /* Now I have the IP address in [real_ip_address] */
     printf("%s\n", real_ip_address);
     free(real_ip_address);
