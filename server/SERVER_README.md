@@ -1,6 +1,6 @@
 # Instructions
 
-Put the IP address of your server into server_ip.txt OR the url into server_url.txt (if both are set priority will be given to the IP).
+Put the IP address (or a url) of your server into server_info.txt.
 
 Run Compile.sh to compile the server executable.
 
