@@ -7,6 +7,7 @@ int main()
     printf("Starting Server...\n");
     FILE *server_info_read = NULL;
     char server_info_buffer[32];
+    int ip_or_url_flag = 0; /* 1 = ip, 2 = url*/
 
     /* Retreiving info from info file */
     server_info_read = fopen("server_ip.txt", "r");
@@ -20,6 +21,7 @@ int main()
         fscanf(server_info_read, "%c", &server_info_buffer[i]);
     }
     fclose(server_info_read);
+    ip_or_url_flag = 1;
     /*checking if the ip was not put in --> reading server_url.txt for an url*/
     if (strcmp(server_info_buffer, "") == 0)
     {
@@ -34,6 +36,7 @@ int main()
             fscanf(server_info_read, "%c", &server_info_buffer[i]);
         }
         fclose(server_info_read);
+        ip_or_url_flag = 2;
         /*checking if the url wasnt also put in the config file*/
         if (strcmp(server_info_buffer, "") == 0)
         {
@@ -42,6 +45,7 @@ int main()
         }
     }
     /* Now we have the ip so we can start the server */
+
     
 
     return 0;
